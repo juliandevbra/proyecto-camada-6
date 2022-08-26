@@ -1,13 +1,31 @@
 import './App.css';
 import { useState } from 'react';
-import Rejuvenecedor from './Components/Entregados/Rejuvenecedor3';
+import SelectPj from './Components/Clase 12/SelectPj';
+import Header from './Components/Clase 12/Header';
+import pokedex from './pokedex.json'
 
 function App() {
 
+  const [pokeSel, setPokeSel] = useState({
+    id: 0,
+    name: '',
+    type: [
+      ''
+    ],
+    base: {
+      HP: '',
+      Attack: '',
+      Defense: '',
+      SpAttack: '',
+      SpDefense: '',
+      Speed: ''
+    }
+  })
 
   return (
     <div className="App">
-        <Rejuvenecedor/>
+      <Header pokeSel={pokeSel}/>
+      <SelectPj pokedex={pokedex} setPokeSel={setPokeSel}/>
     </div>
   );
 }
