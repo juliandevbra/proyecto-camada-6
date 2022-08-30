@@ -1,4 +1,5 @@
 import React from 'react'
+import './pokedex.css'
 
 const Header = ({pokeSel}) => {
 
@@ -9,9 +10,12 @@ const Header = ({pokeSel}) => {
 }
 
   return (
-    <div>
-      <img id="pokemonImg" src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${getPokemon()}.png`} alt='' />
-      Pokemon Seleccionado: {pokeSel.name}
+    <div className='header-container'>
+      <section className='header-fixed'>
+        <h2>Pokemon Seleccionado: {pokeSel.name}</h2>
+        <img id="pokemonImg" src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${getPokemon()}.png`} alt='' />
+       
+      </section>
     </div>
   )
 }

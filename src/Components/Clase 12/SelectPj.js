@@ -1,12 +1,13 @@
 import React from 'react'
+import './pokedex.css'
 
 const SelectPj = ({pokedex, setPokeSel}) => {
 
   return (
-    <div>
-      {pokedex.map(poke => <p 
+    <div className='select-poke'>
+      {pokedex.map(poke => <p className='poke'
         onClick={() =>  setPokeSel(poke)}
-      >{poke.name}</p>)}
+      >{poke.id} - {poke.name}</p>)}
     </div>
   )
 }
