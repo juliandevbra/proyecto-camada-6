@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
-import Item from './Item'
 import myPoke from './myPoke.json'
 import './Shop.css'
 
-const Shop = ({setTotal, total}) => {
+const Shop = () => {
 
   return (
     <div className='shop'>
         {myPoke.map(item => 
-            <Item setTotal={setTotal} total={total} key={item.id} item={item.item} stock={item.stock} price={item.price} img={item.img}/>
+           <section  className='item-card'>
+            <h3>{item.item}</h3>
+            <img src={item.img} alt='' className='item-img'/>
+           </section>
         )}
     </div>
   )
