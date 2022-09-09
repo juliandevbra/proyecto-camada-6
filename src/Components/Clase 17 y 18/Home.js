@@ -7,8 +7,9 @@ import './pokedex.css'
 const Home = ({pokeSel}) => {
   return (
     <>
-      <h2>Home page</h2>
-      <Navbar/>
+      <section className='header-container'>
+        <Navbar/>
+      </section>
       <Outlet/>
     </>
   )
