@@ -15,16 +15,19 @@ const Pokemon = ({loading, setLoading}) => {
         .then(res => {
             console.log(res.data)
             setPoke(res.data)
+            setTimeout(() => {
+              setLoading(false)
+            }, 1000)
         })
-    }, [url])
+    }, [url, setLoading])
 
   return (
     <div className='poke-info'>
+      {console.log(loading)}
       {loading ? 
-        <img src={pokeloader} alt=''/>
+        <img src={pokeloader} alt='' style={{margin: 'auto'}}/>
         : 
         <div className='poke-stats'>     
-          <h3>{params.pokeName}</h3>
           <h3>{poke.name}</h3>
           <img src={poke.sprites?.front_default} alt=''/>
         </div>

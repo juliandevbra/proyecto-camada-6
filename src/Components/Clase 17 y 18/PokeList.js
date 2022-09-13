@@ -12,10 +12,6 @@ const PokeList = ({loading, setLoading}) => {
     .then(res => {
       console.log(res.data.results)
       setPokeList(res.data.results)
-      setTimeout(() => {
-        setLoading(false)
-      }, 2000)
-     
     })
   }, [setLoading, loading])
 
