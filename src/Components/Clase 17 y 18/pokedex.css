@@ -64,11 +64,18 @@
     flex-direction: column;
     padding: 20px;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     border: 10px solid black;
 }
+.poke-stats{
+    animation: fade-in 1s;
 
+  
+}
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
 .poke-info h3{
     border: 5px solid black;
     border-radius: 10px;

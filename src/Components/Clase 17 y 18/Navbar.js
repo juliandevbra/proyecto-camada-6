@@ -6,9 +6,10 @@ const Navbar = () => {
   const navigate = useNavigate()
   const [searchPoke, setSearchPoke] = React.useState('')
 
-  useEffect(() => {
+  const search = (e) => {
+      e.preventDefault()
       navigate(`/pokemon/${searchPoke}`)
-  }, [navigate, searchPoke])
+  }
   
 
   return (
@@ -18,7 +19,11 @@ const Navbar = () => {
       <Link to='/pokemon'><h3>PokeList</h3></Link>
       <Link to='/type'><h3>Tipos</h3></Link>
 
-      <input type='text' value={searchPoke} onChange={(e) => setSearchPoke(e.target.value)}/>
+      <form onSubmit={search}>
+        <input type='text' value={searchPoke} onChange={(e) => setSearchPoke(e.target.value)}/>
+        <button>🔍</button>
+      </form>
+
     </nav>
   )
 }

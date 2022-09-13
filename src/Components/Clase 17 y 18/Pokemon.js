@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import './pokedex.css'
+import pokeloader from './pokemongo.gif'
 
-const Pokemon = () => {
+const Pokemon = ({loading, setLoading}) => {
     const params = useParams()
     const url = `https://pokeapi.co/api/v2/pokemon/${params.pokeName.toLowerCase()}`
 
@@ -19,10 +20,16 @@ const Pokemon = () => {
 
   return (
     <div className='poke-info'>
-        <h3>{params.pokeName}</h3>
-        <h3>{poke.name}</h3>
-        <img src={poke.sprites?.front_default} alt=''/>
-    </div>
+      {loading ? 
+        <img src={pokeloader} alt=''/>
+        : 
+        <div className='poke-stats'>     
+          <h3>{params.pokeName}</h3>
+          <h3>{poke.name}</h3>
+          <img src={poke.sprites?.front_default} alt=''/>
+        </div>
+      }    
+      </div>
   )
 }
 
