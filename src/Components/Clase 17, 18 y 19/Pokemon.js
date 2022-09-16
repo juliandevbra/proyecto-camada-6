@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import './pokedex.css'
-import pokeloader from './pokemongo.gif'
 
 const Pokemon = ({loading, setLoading}) => {
     const params = useParams()
@@ -13,7 +12,6 @@ const Pokemon = ({loading, setLoading}) => {
     useEffect(() => {
         axios.get(url)
         .then(res => {
-            console.log(res.data)
             setPoke(res.data)
             setTimeout(() => {
               setLoading(false)
@@ -23,9 +21,8 @@ const Pokemon = ({loading, setLoading}) => {
 
   return (
     <div className='poke-info'>
-      {console.log(loading)}
       {loading ? 
-        <img src={pokeloader} alt='' style={{margin: 'auto'}}/>
+        <img src='/assets/pokemongo.gif' alt='' style={{margin: 'auto'}}/>
         : 
         <div className='poke-stats'>     
           <h3>{poke.name}</h3>

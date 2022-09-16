@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./Components/Clase 17 y 18/Home";
-import PokeList from "./Components/Clase 17 y 18/PokeList";
-import PokeType from "./Components/Clase 17 y 18/PokeType";
-import Pokemon from "./Components/Clase 17 y 18/Pokemon";
-import NotFound from "./Components/Clase 17 y 18/NotFound";
+import Home from "./Components/Clase 17, 18 y 19/Home";
+import PokeList from "./Components/Clase 17, 18 y 19/PokeList";
+import PokeType from "./Components/Clase 17, 18 y 19/PokeType";
+import Pokemon from "./Components/Clase 17, 18 y 19/Pokemon";
+import NotFound from "./Components/Clase 17, 18 y 19/NotFound";
 
 function App() {
 
@@ -13,7 +13,7 @@ function App() {
    return (
     <div>
       <Routes>
-          <Route path='/' element={<Home/>}>
+          <Route path='/' element={<Home loading={loading} setLoading={setLoading}/>}>
               <Route path='/pokemon' element={<PokeList loading={loading} setLoading={setLoading}/>}>
                   <Route path=':pokeName' element={<Pokemon  loading={loading} setLoading={setLoading}/>}/>
               </Route>

@@ -5,14 +5,35 @@ import { Link, Outlet } from 'react-router-dom'
 const PokeList = ({loading, setLoading}) => {
 
   const [pokeList, setPokeList] = useState([])
+  const [cantidad, setCantidad] = useState(2)
   const url = 'https://pokeapi.co/api/v2/pokemon?limit=150&offset=0'
 
-  useEffect(() => {
+  let wid = window.innerWidth
+  let hei = window.innerHeight
+
+  useEffect( () => {
+    // Ejemplo con then
     axios.get(url)
     .then(res => {
-      console.log(res.data.results)
       setPokeList(res.data.results)
     })
+    .catch(err => console.log(err))
+
+
+    //Ejemplo con async/await y try&catch
+    const fetchData =  async () => {
+    try{
+        const response = await axios.get(url)
+        setPokeList(response.data.results)
+      }
+      catch (err) {
+        console.log(err)
+      }
+    }
+    fetchData()
+    
+    
+
   }, [setLoading, loading])
 
   return (

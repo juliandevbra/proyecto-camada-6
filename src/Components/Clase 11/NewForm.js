@@ -19,7 +19,6 @@ const NewForm = () => {
             setName('')
             setError(false)
         }
-
     }
 
     return(

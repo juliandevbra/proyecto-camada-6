@@ -1,14 +1,18 @@
 import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({loading, setLoading}) => {
 
   const navigate = useNavigate()
   const [searchPoke, setSearchPoke] = React.useState('')
 
   const search = (e) => {
       e.preventDefault()
+      setLoading(true)
       navigate(`/pokemon/${searchPoke}`)
+      setTimeout(() => {
+        setLoading(false)
+      }, 1000)
   }
   
 
