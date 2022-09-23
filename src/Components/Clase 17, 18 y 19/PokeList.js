@@ -19,10 +19,9 @@ const PokeList = ({loading, setLoading}) => {
     })
     .catch(err => console.log(err))
 
-
     //Ejemplo con async/await y try&catch
     const fetchData =  async () => {
-    try{
+      try{
         const response = await axios.get(url)
         setPokeList(response.data.results)
       }
@@ -31,9 +30,6 @@ const PokeList = ({loading, setLoading}) => {
       }
     }
     fetchData()
-    
-    
-
   }, [setLoading, loading])
 
   return (
