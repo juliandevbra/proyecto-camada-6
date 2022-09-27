@@ -6,7 +6,7 @@ const useFetch = (url, id) => {
     const [data, setData] = useState()
 
     useEffect(() => {
-        axios(url + id)
+        axios(url)
         .then(res => setData(res.data))
         .catch(err => console.log(err))
     }, [url])
@@ -15,3 +15,7 @@ const useFetch = (url, id) => {
 }
 
 export default useFetch
+
+
+
+

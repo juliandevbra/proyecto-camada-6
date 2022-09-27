@@ -6,7 +6,6 @@ export function useToggle(initialState = false) {
     
     const toggleState = useCallback(
         () => setState(state => !state)
-        
     , [state]);
     
     return [state, toggleState]
