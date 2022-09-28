@@ -6,27 +6,27 @@ import PokeList from "./Components/Clase 23/PokeList";
 import PokeType from "./Components/Clase 17, 18 y 19/PokeType";
 import Pokemon from "./Components/Clase 17, 18 y 19/Pokemon";
 import NotFound from "./Components/Clase 17, 18 y 19/NotFound";
-import ParentComponent from "./Components/Clase 25/ParentComponent";
-import LoboEstepario from "./Components/Clase 25/LoboEstepario";
+import Login from "./Components/Clase 26/Login";
+import { Auth } from "./Components/Clase 26/Auth";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
 
   const [loading, setLoading] = useState(true)
-  
 
   return (
     <div>
-      {/* <ParentComponent />
-      <LoboEstepario /> */}
-      <Routes>
-          <Route path='/' element={<Home loading={loading} setLoading={setLoading}/>}>
+      <Login/>
+      {/* <Routes>
+          <Route path='/' element={ Auth() ? <Home loading={loading} setLoading={setLoading}/> : <NotFound/>}>
               <Route path='/pokemon' element={<PokeList loading={loading} setLoading={setLoading}/>}>
                   <Route path=':pokeName' element={<Pokemon  loading={loading} setLoading={setLoading}/>}/>
               </Route>
               <Route path='/type' element={<PokeType/>}/>
           </Route>
           <Route path='*' element={<NotFound/>}/>
-      </Routes>
+      </Routes> */}
     </div>
   );
 }

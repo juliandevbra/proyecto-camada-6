@@ -6,6 +6,7 @@ const Context = ({children}) => {
 
     const [salario, setSalario] = useState(100000)
     const [plantelPoke, setPlantelPoke] = useState([])
+
  
     return (
         <GlobalStates.Provider

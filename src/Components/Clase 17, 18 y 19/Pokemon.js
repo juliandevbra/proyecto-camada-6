@@ -32,7 +32,9 @@ const Pokemon = ({loading, setLoading}) => {
         <div className='poke-stats'>     
           <h3>{poke.name}</h3>
           <img src={poke.sprites?.front_default} alt=''/>
-          <button onClick={() => setPlantelPoke([...plantelPoke, poke])}>Agregar poke</button>
+          <button onClick={() => {
+            setPlantelPoke([...plantelPoke, poke])
+            }}>Agregar poke</button>
         </div>
         
       }    
